@@ -1,0 +1,78 @@
+/* Main box in middle of page */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Each task looks like a card */
+.task-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px 0;
+  background: #fff;
+}
+
+/* Small color label */
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  color: #fff;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+/* Status colors */
+.badge-pending {
+  background: #888;
+}
+
+.badge-progress {
+  background: #007bff;
+}
+
+.badge-done {
+  background: #28a745;
+}
+
+/* Priority colors */
+.badge-low {
+  background: #6c757d;
+}
+
+.badge-medium {
+  background: #ff9800;
+}
+
+.badge-high {
+  background: #dc3545;
+}
+
+/* Form in one row on computer */
+.task-form {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+/* Red text for errors */
+.error-text {
+  color: red;
+}
+
+/* Stack form on small phones */
+@media (max-width: 600px) {
+  .task-form {
+    flex-direction: column;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+  }
+}

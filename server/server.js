@@ -12,8 +12,11 @@ connectDB();
 // Make a new app
 const app = express();
 
-// Let frontend talk to this API
-app.use(cors());
+// Pick frontend address from .env or use local
+const clientURL = process.env.CLIENT_URL || 'http://localhost:5173';
+
+// Let only that frontend talk to this API
+app.use(cors({ origin: clientURL }));
 // Let app read JSON data
 app.use(express.json());
 
