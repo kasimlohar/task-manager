@@ -13,7 +13,12 @@ connectDB();
 const app = express();
 
 // Pick frontend address from .env or use local
-const clientURL = process.env.CLIENT_URL || 'http://localhost:5173';
+let clientURL = process.env.CLIENT_URL || 'http://localhost:5173';
+
+// Remove last slash if present
+if (clientURL.endsWith('/')) {
+  clientURL = clientURL.slice(0, -1);
+}
 
 // Let only that frontend talk to this API
 app.use(cors({ origin: clientURL }));
